@@ -26,3 +26,7 @@ end
 def full?(board)
   board.all?{|token| token == "X" || token == "O"}
 end
+
+def tie(board)
+  full?(board) && !won?(board)
+end 
