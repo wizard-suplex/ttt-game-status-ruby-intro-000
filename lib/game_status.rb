@@ -16,10 +16,10 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
- WIN_COMBINATIONS.detect do |win|
-   board[win[0]] == board[win[1]] &&
-   board[win[1]] == board[win[2]] &&
-   position_taken(board, win[])
+ WIN_COMBINATIONS.detect do |combo|
+   board[combo[0]] == board[combo[1]] &&
+   board[combo[1]] == board[combo[2]] &&
+   position_taken(board, combo[0])
  end
 end
 
@@ -29,4 +29,4 @@ end
 
 def tie(board)
   full?(board) && !won?(board)
-end 
+end
