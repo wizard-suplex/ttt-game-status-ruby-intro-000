@@ -15,18 +15,30 @@ WIN_COMBINATIONS = [
   [2, 4, 6] # diagonal R-L
 ]
 
+# Determine if someone has won
 def won?(board)
- WIN_COMBINATIONS.detect do |combo|
-   board[combo[0]] == board[combo[1]] &&
-   board[combo[1]] == board[combo[2]] &&
-   position_taken(board, combo[0])
+ WIN_COMBINATIONS.detect do |win|
+   board[win[0]] == board[win[1]] &&
+   board[win[1]] == board[win[2]] &&
+   position_taken(board, win[])
  end
 end
 
+# Determine if the board has been filled
 def full?(board)
   board.all?{|token| token == "X" || token == "O"}
 end
 
+# Determine that there has been a draw
 def tie(board)
   full?(board) && !won?(board)
+end
+
+# Determine if the game is over
+def over?(board)
+end
+
+# Announce the winner
+def winner(board)
+
 end
