@@ -30,12 +30,13 @@ def full?(board)
 end
 
 # Determine that there has been a draw
-def tie(board)
+def draw?(board)
   full?(board) && !won?(board)
 end
 
 # Determine if the game is over
 def over?(board)
+  won?(board) || draw?(board)
 end
 
 # Announce the winner
